@@ -77,68 +77,38 @@
             <div id="content">
 
 
-            <?php
-$connection = new SQLite3('site.db');
-$results = $connection->query('SELECT * FROM html_data WHERE cat = "' . $_GET['cat'] . '" AND subcat = "' . $_GET['subcat'] . '"');
+                <?php
+                $connection = new SQLite3('site.db');
+                $results = $connection->query('SELECT * FROM html_data WHERE cat = "' . $_GET['cat'] . '" AND subcat = "' . $_GET['subcat'] . '"');
 
-echo '<table class="bigThumbnail">';
-echo '<tr><th></th></tr>';
+                echo '<table class="bigThumbnail">';
+                echo '<tr>';
 
-while ($row = $results->fetchArray(SQLITE3_ASSOC)) {
-    // Get the specific game ID from the current row
-    $gameID = htmlspecialchars($row['id']); // Assuming 'id' is the correct column name
+                $count = 0;
 
-    echo '<tr>';
-    echo '<td><a class="title" href="gameview.php?id=' . $gameID . '">' . htmlspecialchars($row['title']) . '
-    <img src="../screenshots/' . htmlspecialchars($row['screenshot_filename'] . '.jpg') . '" alt="Image">
-        </a></td>';
-    echo '</tr>';
-    echo '<tr>'; // Open a new row for the image
-}
-echo '</table>';
-?>
-    
-                <div id="groupThumbnails">
-                    <div style="width: 728px; height: 90px; margin: -5px auto 10px auto;">
-                        <div id="div-gpt-ad-1369840147428-2" style="width:728px; height:90px;">
-                            <script
-                                type="text/javascript"> googletag.cmd.push(function () { googletag.display("div-gpt-ad-1369840147428-2"); }); </script>
-                        </div>
-                    </div>
-                    <div class="bigThumbnail"><a href="../igri/Cooking+Banana+Split.html" class="title">Cooking Banana
-                            Split</a><a href="../igri/Cooking+Banana+Split.html" class="image"><img
-                                src="../screenshots/90_11482.jpg" width="200" height="123"
-                                alt="Cooking Banana Split" /></a>
-                    </div>
-                    <div class="bigThumbnail"><a href="../igri/Strawberry+Cake.html" class="title">Strawberry Cake</a><a
-                            href="../igri/Strawberry+Cake.html" class="image"><img src="../screenshots/90_11595.jpg"
-                                width="200" height="123" alt="Strawberry Cake" /></a>
-                    </div>
-                    <div class="bigThumbnail"><a href="../igri/Make+Challah+Recipe.html" class="title">Make Challah
-                            Recipe</a><a href="../igri/Make+Challah+Recipe.html" class="image"><img
-                                src="../screenshots/90_11393.jpg" width="200" height="123"
-                                alt="Make Challah Recipe" /></a>
-                    </div>
-                    <div class="bigThumbnail"><a href="../igri/Donuts+Cooking.html" class="title">Donuts Cooking</a><a
-                            href="../igri/Donuts+Cooking.html" class="image"><img src="../screenshots/90_10701.jpg"
-                                width="200" height="123" alt="Donuts Cooking" /></a>
-                    </div>
-                    <div class="bigThumbnail"><a href="../igri/Vegetable+Sandwich.html" class="title">Vegetable
-                            Sandwich</a><a href="../igri/Vegetable+Sandwich.html" class="image"><img
-                                src="../screenshots/90_11026.jpg" width="200" height="123"
-                                alt="Vegetable Sandwich" /></a>
-                    </div>
-                    <div class="bigThumbnail"><a href="../igri/Barbie+Candy+Pizza.html" class="title">Barbie Candy
-                            Pizza</a><a href="../igri/Barbie+Candy+Pizza.html" class="image"><img
-                                src="../screenshots/90_11530.jpg" width="200" height="123"
-                                alt="Barbie Candy Pizza" /></a>
-                    </div>
-                    <div class="bigThumbnail"><a href="../igri/Barbie+Birthday+Cake.html" class="title">Barbie Birthday
-                            Cake</a><a href="../igri/Barbie+Birthday+Cake.html" class="image"><img
-                                src="../screenshots/90_11534.jpg" width="200" height="123"
-                                alt="Barbie Birthday Cake" /></a>
-                    </div>
-                </div>
+                while ($row = $results->fetchArray(SQLITE3_ASSOC)) {
+                    $gameID = htmlspecialchars($row['id']);
+
+                    echo '<td>';
+                    echo '<a class="title" href="gameview.php?id=' . $gameID . '">' . htmlspecialchars($row['title']) . '</a>';
+                    echo '<a href="gameview.php?id=' . $gameID . '"><img src="../screenshots/' . htmlspecialchars($row['screenshot_filename'] . '.jpg') . '" alt="Image"></a>';
+                    echo '</td>';
+
+                    // table cell row count logic
+                    $count++;
+
+                    if ($count % 4 === 0) {
+                        echo '</tr>';
+                        echo '<tr>';
+                    }
+                }
+
+                echo '</tr>';
+                echo '</table>';
+                ?>
+
+
+
             </div>
             <div style="clear: both;"></div>
         </div>

@@ -68,7 +68,7 @@ table {
     backdrop-filter: blur(10px);
 }
 
-tr:hover {
+td:hover {
     background-color: #7cbcda;
     transition: 0.2s;
 }
@@ -103,7 +103,8 @@ th {
 #header {
     height: 66px;
     position: relative;
-    padding-left: 60px;
+    padding-left: 156px;
+    width: auto;
 }
 
 #header #logo {}
