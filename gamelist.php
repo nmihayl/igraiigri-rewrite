@@ -15,9 +15,6 @@
     <meta property="og:image" content="http://www.igraiigri.com/screenshots/90_4536.jpg" />
     <meta property="og:description"
         content="Тук ще намериш всички други онлайн игри, които не са подходящи за другите категории. " />
-    <meta property="fb:admins" content="520971108" />
-    <meta property="fb:app_id" content="130678773638421" />
-
 
     <link rel="stylesheet" href="../css/style.css" type="text/css" />
     <link rel="stylesheet" media="only screen and (min-width: 1260px)" href="../css/big.css" />
@@ -79,7 +76,8 @@
 
                 <?php
                 $connection = new SQLite3('site.db');
-                $results = $connection->query('SELECT * FROM html_data WHERE cat = "' . $_GET['cat'] . '" AND subcat = "' . $_GET['subcat'] . '"');
+                $results = $connection->query('SELECT * FROM html_data WHERE cat = "' . $_GET['cat'] . '" AND subcat = "' . $_GET['subcat'] . '" ORDER BY title COLLATE NOCASE ASC
+                ');
 
                 echo '<table class="bigThumbnail">';
                 echo '<tr>';
