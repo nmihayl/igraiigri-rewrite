@@ -1,10 +1,18 @@
 # igraiigri-rewrite
 
-The following repository hosts an attempt at a rewrite of the Bulgarian version of the flash game portal Roundgames (IgraiIgri). As it stands, the current version is in rough shape as the original website's codebase is near impossible to maintain which prompted this rewrite.
+![image](/screenshot.jpg)
+
+The following repository hosts an attempt at a rewrite of the Bulgarian version of the flash game portal Roundgames (IgraiIgri). This rewrite was prompted by the original website's near-impossible to maintain codebase.
 
 ## Changes
 
-What's different about this rewrite is it completely restructures the backend. The original site contains over 10 000 individual HTML files for each flash game hosted, as well as a fractured categorization system. This rewrite addresses the structural problem by implementing the backend with PHP and an SQLite database in which every flash game entry can be referred to. That is not mentioning the removal of Google and Facebook trackers via JavaScript which is also being addressed.
+What's different about this rewrite is it completely restructures the backend. The original site contains over 10.000 individual HTML files for each flash game hosted, as well as a fractured categorization system and the occassional broken and/or duplicate entry. This rewrite addresses the following:
+
+- The structural problem is being resolved by implementing the backend with PHP and an SQLite database in which every flash game entry can be referred to.
+
+- The site's JavaScript is planned to be rewritten to ensure compatibility and removal of Google and Facebook trackers.
+
+- The database is being manually verified to ensure proper sorting of entries as well as marking of duplicate entries and broken ones which are to be replaced with ones sourced from Flashpoint in the future.
 
 ## Hosting
 
@@ -14,16 +22,32 @@ The original page is available here:
 
 A mirror of the original page is here:
 
-- [igraiigri.helliolab.giize.com](https://playground.helliolab.giize.com/)
+- [igraiigri.helliolab.giize.com](https://igraiigri.helliolab.giize.com/)
 
 The current development version of the rewrite is available here:
 
 - [playground.helliolab.giize.com](https://playground.helliolab.giize.com/)
 
-Note that the rewrite is not in a usable state; this Git repo is primarily for ease of development and version control. Currently games are playable with Ruffle (provided the flash files are present in  `flash/`), although accessing them via navigating the page normally is not possible as of yet.
+Note that the rewrite is not in a usable state; this Git repo is primarily for ease of development and version control. Currently games are playable with Ruffle (provided the flash files are present in  `flash/`), although accessing them via navigating the page normally is not possible as of yet. However, you can use `gameview.php?id=x` where x is the ID of the game sourced from the database.
 
-## TBO
+## Archival copy
 
-I have an archival copy of the entire 20GB worth of the original page which will soon be uploaded to archive.org. Hosting a functional copy requires the .swf, .dcr and all screenshot files which have been excluded from this repository for obvious reasons. All of the contents should, however, be accessible over at the development version mentioned earlier:
+I've made an archival copy of the website and uploaded it [here on the Internet Archive](https://archive.org/details/igraiigri). This ZIP contains every image, Flash file, DCR file for Shockwave titles and every individual game page. 
 
-[Link to "N: The Way of the Ninja" on my rewrite version:](https://playground.helliolab.giize.com/gameview.php?id=13278)
+For hosting a development version of this project, a download of this is required for the game and image files as they're not being provided with this Git repository for obvious reasons.
+
+## Preview/Demo
+
+["N: The Way of the Ninja" on my rewrite version](https://playground.helliolab.giize.com/gameview.php?id=13278)
+
+[The "Tetris" subcategory listing](https://playground.helliolab.giize.com/gamelist.php?cat=classic&subcat=tetris)
+
+[Call random game ID from the database (also accessible via the gameview.php in the form of a button)](https://playground.helliolab.giize.com/random.php)
+
+## Contributing
+
+If you want to contribute, feel free to Git clone this repository and continue the work in the database. The `cat-template.ods` document lists all categories as they appear on the site and how they should appear in the database file. If you finish a subcat, mark the corresponding field in the first row with a 1 to signify this subcat's database entries have been entered and verified. You can use [https://playground.helliolab.giize.com/gameview.php?id=x](https://playground.helliolab.giize.com/gameview.php?id=x) to enter the game ID's as they appear in the database.
+
+Note that both entries of a game that can be considered as **a duplicate should be marked as such**. Games that are **non-functional should be marked as broken** in the database and **without any `cat` and `subcat` information entered**.
+
+Contributing is also welcome for the JavaScript file which needs to be rewritten from scratch. HTML/CSS improvements are also welcome.
