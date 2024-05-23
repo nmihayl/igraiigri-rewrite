@@ -25,9 +25,9 @@ $results = $connection->query('SELECT * FROM html_data');
                 if (!empty($row['id'])) {
                     echo '<a href="https://playground.helliolab.giize.com/gameview.php?id=' . $row['id'] . '" target="_blank">' . $row['id'] . '</a><br><br>';
                 }
-                    echo '</td></tr>';
-                }
-                echo '</table>';
+                echo '</td></tr>';
+            }
+            echo '</table>';
             ?>
 
         </div>

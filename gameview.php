@@ -22,7 +22,7 @@ $imageResult = $row['screenshot_filename'];
     <meta property="og:site_name" content="Igrai Igri" />
     <meta property="og:title" content="<?php echo $gameTitle; ?>" />
     <meta property="og:type" content="game" />
-    <meta property="og:url" content="http://www.igraiigri.com/igri/2+Dots" />
+    <meta property="og:url" content="https://playground.helliolab.giize.com" />
     <meta property="og:image" content="<?php echo $imageResult . '.jpg'; ?>" />
     <link rel="stylesheet" href="../css/style.css" type="text/css" />
     <link rel="stylesheet" media="only screen and (min-width: 1260px)" href="../css/big.css" />
@@ -48,7 +48,7 @@ $imageResult = $row['screenshot_filename'];
                     var prerollTimer = 0;
                     var prerollLength = 1500;
                     var prerollSkippable = 200;
-                    var prerollStart = + new Date;
+                    var prerollStart = +new Date;
                     var prerollPassed = 0;
                     var loadingText = 'Играта започва след %gameTimer% секунди...';
                     var leaderboardDistance = '120';
@@ -60,13 +60,15 @@ $imageResult = $row['screenshot_filename'];
                         <div id="gameTitle">
                             <span><?php echo $gameTitle; ?></span>
                             <a href="javascript: fullScreen();" id="fullscreen">Scale</a>
-                            <button onclick="location.href='https://playground.helliolab.giize.com/gameview.php?id=<?php
-                            $connection = new SQLite3('site.db');
-                            $maxIdResult = $connection->query('SELECT max(rowid) FROM html_data');
-                            $maxId = $maxIdResult->fetchArray(SQLITE3_ASSOC)['max(rowid)'];
-                            $randomId = rand(1, $maxId);
-                            echo $randomId;
-                            ?>'">Play Random Game</button>
+                            <button
+                                onclick="location.href='https://playground.helliolab.giize.com/gameview.php?id=<?php
+                                $connection = new SQLite3('site.db');
+                                $maxIdResult = $connection->query('SELECT max(rowid) FROM html_data');
+                                $maxId = $maxIdResult->fetchArray(SQLITE3_ASSOC)['max(rowid)'];
+                                $randomId = rand(1, $maxId);
+                                echo $randomId;
+                                ?>'">Play
+                                Random Game</button>
 
                         </div>
                         <div id="gameWrapper">

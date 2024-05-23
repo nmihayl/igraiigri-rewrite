@@ -11,7 +11,6 @@
     <meta property="og:site_name" content="Igrai Igri" />
     <meta property="og:title" content="Online Игри" />
     <meta property="og:type" content="game" />
-    <meta property="og:url" content="http://www.igraiigri.com/igrai/Online+%D0%98%D0%B3%D1%80%D0%B8" />
     <meta property="og:image" content="http://www.igraiigri.com/screenshots/90_4536.jpg" />
 
     <link rel="stylesheet" href="../css/style.css" type="text/css" />
@@ -19,7 +18,7 @@
 
     <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico" />
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="js/jquery-min.jsjquery.min.js"></script>
     <script type="text/javascript" src="../js/overall.js"></script>
 
 </head>
@@ -34,8 +33,7 @@
                 <div id="search">
                     <form action="https://www.igraiigri.com/search/" method="get">
                         <input type="text" id="searchTerm" name="term">
-                        <input type="image" id="searchButton" src="../images/search.png" width="32" height="32"
-                            border="0" ALT="Търси!">
+                        <input type="image" id="searchButton" src="../images/search.png" width="32" height="32" border="0" ALT="Търси!">
                     </form>
                 </div>
             </div>
