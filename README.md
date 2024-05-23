@@ -46,8 +46,12 @@ For hosting a development version of this project, a download of this is require
 
 ## Contributing
 
-If you want to contribute, feel free to Git clone this repository and continue the work in the database. The `cat-template.ods` document lists all categories as they appear on the site and how they should appear in the database file. If you finish a subcat, mark the corresponding field in the first row with a 1 to signify this subcat's database entries have been entered and verified. You can use [https://playground.helliolab.giize.com/gameview.php?id=x](https://playground.helliolab.giize.com/gameview.php?id=x) to enter the game ID's as they appear in the database.
+There are different ways to contribute to this project:
 
-Note that both entries of a game that can be considered as **a duplicate should be marked as such**. Games that are **non-functional should be marked as broken** in the database and **without any `cat` and `subcat` information entered**.
+- The biggest helping hand you can provide is by contributing to the database categorizations and verifications of games. You can Git clone this repository and work on the SQLite file. For guidelines for this process, refer to the next paragraph.
 
-Contributing is also welcome for the JavaScript file which needs to be rewritten from scratch. HTML/CSS improvements are also welcome.
+- Contributing to the DB means assigning games their corresponding cat and subcat fields in accordance with the supplied DB tables. If you finish a subcat, mark the corresponding field under the "completed" column with a 1 to signify this subcat's database entries have been entered and verified. You can use [https://playground.helliolab.giize.com/gameview.php?id=x](https://playground.helliolab.giize.com/gameview.php?id=x) to enter the game ID's as they appear in the database. Note that both entries of a game that can be considered as **a duplicate should be marked as such**. Games that are **non-functional should be marked as broken** in the database and **without any `cat` and `subcat` information entered**.
+
+- Contributing is also welcome for the JavaScript file which needs to be rewritten from scratch. 
+
+- PHP/HTML/CSS improvements are also welcome so long as they don't rely on frameworks and expand the size of the codebase.

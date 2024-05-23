@@ -1,6 +1,6 @@
 <?php
 $connection = new SQLite3('site.db');
-$results = $connection->query('SELECT * FROM html_data');
+$results = $connection->query('SELECT * FROM game_data');
 ?>
 
 <!DOCTYPE html>

@@ -1,13 +1,13 @@
 <?php
 $connection = new SQLite3('site.db');
-$results = $connection->query('SELECT * FROM html_data');
+$results = $connection->query('SELECT * FROM game_data');
 $gameID = htmlspecialchars($_GET['id']);
 
-$titleResult = $connection->query("SELECT title FROM html_data WHERE id = $gameID");
+$titleResult = $connection->query("SELECT title FROM game_data WHERE id = $gameID");
 $row = $titleResult->fetchArray(SQLITE3_ASSOC);
 $gameTitle = $row['title'];
 
-$imageResult = $connection->query("SELECT screenshot_filename FROM html_data WHERE id = $gameID");
+$imageResult = $connection->query("SELECT screenshot_filename FROM game_data WHERE id = $gameID");
 $row = $imageResult->fetchArray(SQLITE3_ASSOC);
 $imageResult = $row['screenshot_filename'];
 ?>
@@ -62,7 +62,7 @@ $imageResult = $row['screenshot_filename'];
                             <a href="javascript: fullScreen();" id="fullscreen">Scale</a>
                             <button onclick="location.href='https://playground.helliolab.giize.com/gameview.php?id=<?php
                                                                                                                     $connection = new SQLite3('site.db');
-                                                                                                                    $maxIdResult = $connection->query('SELECT max(rowid) FROM html_data');
+                                                                                                                    $maxIdResult = $connection->query('SELECT max(rowid) FROM game_data');
                                                                                                                     $maxId = $maxIdResult->fetchArray(SQLITE3_ASSOC)['max(rowid)'];
                                                                                                                     $randomId = rand(1, $maxId);
                                                                                                                     echo $randomId;

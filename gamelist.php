@@ -57,7 +57,7 @@
 
                 <?php
                 $connection = new SQLite3('site.db');
-                $results = $connection->query('SELECT * FROM html_data WHERE cat = "' . $_GET['cat'] . '" AND subcat = "' . $_GET['subcat'] . '" ORDER BY title COLLATE NOCASE ASC
+                $results = $connection->query('SELECT * FROM game_data WHERE cat = "' . $_GET['cat'] . '" AND subcat = "' . $_GET['subcat'] . '" ORDER BY title COLLATE NOCASE ASC
                 ');
 
                 echo '<table class="bigThumbnail">';
