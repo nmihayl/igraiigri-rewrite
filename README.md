@@ -40,7 +40,7 @@ For hosting a development version of this project, a download of this is require
 
 ["N: The Way of the Ninja" on my rewrite version](https://playground.helliolab.giize.com/gameview.php?id=13278)
 
-[The "Tetris" subcategory listing](https://playground.helliolab.giize.com/gamelist.php?cat=classic&subcat=tetris)
+[The "Tetris" subcategory listing](https://playground.helliolab.giize.com/gamelist.php?cat_id=12-9)
 
 [Call random game ID from the database (also accessible via the gameview.php in the form of a button)](https://playground.helliolab.giize.com/random.php)
 
