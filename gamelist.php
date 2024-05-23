@@ -41,6 +41,19 @@
         <div id="wrapper">
             <div id="content">
 
+           <!--  <div id="location"><a href="../index.html">Index</a> &raquo; <a href="../igrai/Класически+игри.html">Класически игри</a> &raquo; <span>Pacman</span>			<div id="addthis">
+				<div class="addthis_toolbox addthis_default_style addthis_32x32_style">
+					<a class="addthis_button_preferred_1"></a>
+					<a class="addthis_button_preferred_2"></a>
+					<a class="addthis_button_preferred_3"></a>
+					<a class="addthis_button_preferred_4"></a>
+					<a class="addthis_button_compact"></a>
+					<a class="addthis_counter addthis_bubble_style"></a>
+				</div>
+				<script type="text/javascript">var addthis_config = {"data_track_addressbar":false, "data_track_clickback":true,services_exclude: 'print'};</script>
+				<script type="text/javascript" src="https://s7.addthis.com/js/250/addthis_widget.js#async=1&pubid=ra-51a3f1e74c71e307"></script>
+			</div>
+			</div> -->
 
                 <?php
                 $connection = new SQLite3('site.db');

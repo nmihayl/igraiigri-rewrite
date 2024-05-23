@@ -60,21 +60,19 @@ $imageResult = $row['screenshot_filename'];
                         <div id="gameTitle">
                             <span><?php echo $gameTitle; ?></span>
                             <a href="javascript: fullScreen();" id="fullscreen">Scale</a>
-                            <button
-                                onclick="location.href='https://playground.helliolab.giize.com/gameview.php?id=<?php
-                                $connection = new SQLite3('site.db');
-                                $maxIdResult = $connection->query('SELECT max(rowid) FROM html_data');
-                                $maxId = $maxIdResult->fetchArray(SQLITE3_ASSOC)['max(rowid)'];
-                                $randomId = rand(1, $maxId);
-                                echo $randomId;
-                                ?>'">Play
-                                Random Game</button>
+                            <button onclick="location.href='https://playground.helliolab.giize.com/gameview.php?id=<?php
+                                                                                                                    $connection = new SQLite3('site.db');
+                                                                                                                    $maxIdResult = $connection->query('SELECT max(rowid) FROM html_data');
+                                                                                                                    $maxId = $maxIdResult->fetchArray(SQLITE3_ASSOC)['max(rowid)'];
+                                                                                                                    $randomId = rand(1, $maxId);
+                                                                                                                    echo $randomId;
+                                                                                                                    ?>'">Play Random Game</button>
 
                         </div>
                         <div id="gameWrapper">
                             <div id="gamePreroll">
                                 <script type="text/javascript">
-                                    $(function () {
+                                    $(function() {
                                         finishPreroll();
                                     });
                                 </script>
